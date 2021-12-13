@@ -1,7 +1,6 @@
 # 325p [자물쇠와 열쇠] - 2020 카카오 신입 공채
 # https://programmers.co.kr/learn/courses/30/lessons/60059
 
-import copy
 
 # 2차원 리스트 90도 회전
 def rotate(arr):
