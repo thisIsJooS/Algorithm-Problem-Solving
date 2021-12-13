@@ -5,17 +5,17 @@
 # 2차원 리스트 90도 회전
 def rotate(arr):
     n = len(arr)
-    ret = [[0 for _ in range(n)] for _ in range(n)]
+    res = [[0 for _ in range(n)] for _ in range(n)]
     
     for i in range(n):
         for j in range(n):
-            ret[j][n-1-i] = arr[i][j]
-    
-    return ret
+            res[j][n-1-i] = arr[i][j]
+            
+    return res
 
 
 # 자물쇠의 중간 부분이 모두 1인지 확인
-def isAllOne(arr):
+def check(arr):
     n = len(arr) // 3
     
     for i in range(n, 2*n):
@@ -24,20 +24,19 @@ def isAllOne(arr):
                 return False
             
     return True
-                
+
 
 def solution(key, lock):
     n, m = len(lock), len(key)
     
     #자물쇠의 크기를 기존의 3배로 변환
-    arr = [[0]*(3*n) for _ in range(3*n)]
+    new_lock = [[0]*(3*n) for _ in range(3*n)]
     
     # 새로운 자물쇠의 중앙 부분에 기존의 자물쇠 넣기
     for i in range(n):
         for j in range(n):
-            arr[i+n][j+n] = lock[i][j]
-    
-    
+            new_lock[i+n][j+n] = lock[i][j]
+            
     for i in range(2*n):
         for j in range(2*n):
             # 4가지 방향에 대하여 확인
@@ -46,18 +45,15 @@ def solution(key, lock):
                 # 자물쇠에 열쇠를 끼워 넣기
                 for x in range(m):
                     for y in range(m):
-                        arr[x+i][y+j] += key[x][y]
+                        new_lock[i+x][j+y] += key[x][y]
                 
                 # 새로운 자물쇠에 열쇠가 정확히 들어 맞는지 검사
-                if isAllOne(arr):
+                if check(new_lock):
                     return True
                 
                 # 자물쇠에 열쇠를 다시 빼기
                 for x in range(m):
                     for y in range(m):
-                        arr[x+i][y+j] -= key[x][y]
-                
-                
+                        new_lock[i+x][j+y] -= key[x][y]
+    
     return False
-
-
