@@ -2,10 +2,10 @@
 
 
 <code>
-arr= [[1, 0, 0], [2, 3, 4]]
+    arr= [[1, 0, 0], [2, 3, 4]]
 
-for a in arr:
-    x, y, z = a
-    print(x, y, z)
+    for a in arr:
+        x, y, z = a
+        print(x, y, z)
     
 </code>
