@@ -20,9 +20,9 @@
         data = list(map(int, input().split()))
         arr.append(data)
     
-    for j in range(n):
-        if arr[i][j] == 2:
-            chicken.append((i, j))
-        elif arr[i][j] == 1:
-            house.append((i, j))
+        for j in range(n):
+            if arr[i][j] == 2:
+                arr1.append((i, j))
+            elif arr[i][j] == 1:
+                arr2.append((i, j))
 </code>
