@@ -2,12 +2,13 @@
 # https://www.acmicpc.net/problem/14502
 
 from itertools import combinations
+from collections import deque
 import copy
 
 n, m = map(int, input().split())
 arr = []
 room_locations = []
-virus_locations = []
+virus_locations = deque()
 res = 0      
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
@@ -24,10 +25,10 @@ for i in range(n):
 
 # 주어진 맵에 대하여 전부 감염시킨다 - bfs
 def infect_all():
-    q = []
+    q = deque()
     q = copy.deepcopy(virus_locations)
     while q:
-        x, y = q.pop()
+        x, y = q.popleft()
         
         for i in range(4):
             nx = x + dx[i]

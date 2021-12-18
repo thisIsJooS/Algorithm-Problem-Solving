@@ -26,7 +26,27 @@
     
         for j in range(n):
             if arr[i][j] == 2:
-                arr1.append((i, j))
+                arr1.append((i, j))    
             elif arr[i][j] == 1:
                 arr2.append((i, j))
+</code>
+
+* 반복문 진행 도중 다른 함수에서 e를 건드는 경우 수정된 e로 계속 진행되기 때문에 list()를 입혀줌으로써 레퍼런스를 분리시킨다.
+<code>
+    
+    for e in coord:
+        for i, j in e:
+            infect(i, j)
+    
+    # ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+
+    for e in coord:
+        for i, j in list(e):
+            infect(i, j)
+</code>
+
+* 배열에서 가장 작은 원소의 인덱스 값
+<code>
+
+    d.index(min(d))
 </code>
