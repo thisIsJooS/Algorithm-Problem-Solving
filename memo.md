@@ -1,4 +1,4 @@
-* https://docs.python.org/3/tutorial/
+* https://docs.python.org/ko/3/
 
 * n <= 1,000 이면 시간복잡도 O(N^2) 가능 , 시간제한이 5초라면 O(N^3)도 가능
 
