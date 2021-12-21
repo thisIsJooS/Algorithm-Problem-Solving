@@ -92,3 +92,11 @@
     
     # [4, 1, 2, 3]
 </code>
+
+* 문자열을 가볍게 뒤집기
+<code>
+
+    s = 'abcdefg'
+    s = s[::-1]
+    # gfedcba
+</code>
