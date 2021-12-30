@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/16236
+
 from collections import deque
 
 n = int(input())
@@ -48,7 +50,6 @@ def pop(q, x, y):
         dist = get_distance(x, y, i, j)
         
         arr.append((dist, i, j)) 
-        
     arr.sort()
     min_dist, min_x, min_y = arr[0]
     q.remove((min_x, min_y))

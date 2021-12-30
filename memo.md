@@ -17,6 +17,8 @@
 
 * a = bisect_left(arr, x); b = bisect_right(arr, x); 에서 a==b이면 arr에 x가 존재하지 않는다는 뜻이다.
 
+* BOJ 1931
+
 <hr>
 
 * 2차원 배열 속 원소에 이렇게 접근도 가능하다.
