@@ -2,6 +2,7 @@ dp = [[0] for _ in range(100001)]
 dp[1] = [1, (1, 0, 0)]
 dp[2] = [1, (0, 1, 0)]
 dp[3] = [3, (1, 1, 1)]
+
 for i in range(4, 100001):
     a = dp[i-3][1][0] + dp[i-3][1][1]
     b = dp[i-2][1][0] + dp[i-2][1][2]
@@ -11,7 +12,4 @@ for i in range(4, 100001):
 
 for _ in range(int(input())):
     n = int(input())
-    
     print(dp[n][0] % 1000000009)
-    
-    
